@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex w-full h-20">
             <div class="flex grow">
-                
+
                 <!-- Logo -->
                 <div class="flex items-center grow">
                     <div class="">
@@ -20,7 +20,7 @@
                 <!-- Navigation Links -->
                 <div class="flex items-center grow">
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link href="{{ route('Home_Page') }}">
+                        <x-nav-link href="{{ route('categories.list') }}">
                         <i class='bx bx-list-ul text-xl' ></i>
                         <span class="font-bold text-lg ltr:ms-2 rtl:me-2">{{ __('Categories') }}</span>
                         </x-nav-link>

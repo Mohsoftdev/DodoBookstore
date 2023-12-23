@@ -12,8 +12,7 @@ class CategoriesController extends Controller
      */
     public function index(Category $category)
     {
-        $categories = Category::all();
-        return view('categories.index', compact('categories'));
+
     }
 
     /**
@@ -24,6 +23,20 @@ class CategoriesController extends Controller
         $books = $category->books()->paginate(12);
         $title = 'Books from ' . $category->name .' Category: ';
         return view('gallery', compact('books', 'title'));
+    }
+
+    public function list()
+    {
+        $categories = Category::all()->sortBy('name');
+        $title = 'Categories';
+        return view('categories.index', compact('categories', 'title'));
+    }
+
+    public function search(Request $request)
+    {
+        $categories = Category::where('name', 'like', "%{$request->term}%")->get()->sortBy('name');
+        $title = ' results for: ' . $request->term;
+        return view('categories.index', compact('categories', 'title'));
     }
 
     /**

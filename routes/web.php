@@ -23,7 +23,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [GallaryController::class, 'index']);
 Route::get('/search', [GallaryController::class, 'search'])->name('search');
 Route::get('/books/{book}', [BooksController::class, 'details'])->name('book.details');
+Route::get('/categories/search', [CategoriesController::class, 'search'])->name('gallery.categories.search');
 Route::get('/categories/{category}', [CategoriesController::class, 'result'])->name('category.books');
+Route::get('/categories', [CategoriesController::class, 'list'])->name('categories.list');
 
 
 Route::middleware([
