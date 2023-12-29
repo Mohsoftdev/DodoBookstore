@@ -27,14 +27,14 @@
                     </div>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link href="{{ route('Home_Page') }}">
+                        <x-nav-link href="{{ route('publishers.list') }}">
                         <i class='bx bx-table text-xl'></i>
                         <span class="font-bold text-lg ltr:ms-2 rtl:me-2">{{ __('Publishers') }}</span>
                         </x-nav-link>
                     </div>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link href="{{ route('Home_Page') }}" >
+                        <x-nav-link href="{{ route('authors.list') }}" >
                             <i class='bx bx-edit text-xl font-bold'></i>
                             <span class="font-bold text-lg ltr:ms-2 rtl:me-2">{{ __('Authors') }}</span>
                         </x-nav-link>

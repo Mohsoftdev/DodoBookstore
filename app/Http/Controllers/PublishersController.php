@@ -62,4 +62,18 @@ class PublishersController extends Controller
     {
         //
     }
+
+    public function list()
+    {
+        $publishers = Publisher::all()->sortBy('name');
+        $title = 'Available Publishers';
+        return view('publishers.index', compact('publishers', 'title'));
+    }
+
+    public function search(Request $request)
+    {
+        $publishers = Publisher::where('name', 'like', "%{$request->term}%")->get()->sortBy('name');
+        $title = 'Available Results for :' . $request->term;
+        return view('publishers.index', compact('publishers', 'title'));
+    }
 }

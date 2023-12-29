@@ -62,4 +62,18 @@ class AuthorsController extends Controller
     {
         //
     }
+
+    public function list()
+    {
+        $authors = Author::all()->sortBy('name');
+        $title = 'Available Authors';
+        return view('authors.index', compact('authors', 'title'));
+    }
+
+    public function search(Request $request)
+    {
+        $authors = Author::where('name', 'like', "%{$request->term}%")->get()->sortBy('name');
+        $title = 'Available Results for :' . $request->term;
+        return view('authors.index', compact('authors', 'title'));
+    }
 }

@@ -17,6 +17,10 @@ export default {
             fontFamily: {
                 sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
             },
+
+            width: {
+                '70': '17.5rem',
+              }
         },
 
         variants: {

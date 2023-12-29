@@ -10,6 +10,7 @@
                         <i class='bx bx-search-alt-2 text-2xl text-white'></i>
                     </button>
                 </form>
+                
             </div>
         </div>
 
