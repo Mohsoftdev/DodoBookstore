@@ -13,7 +13,7 @@
             <i class='bx bx-tachometer text-xl me-1'></i>
             Dashboard
         </a>
-        <a href="blank.html" class="flex items-center {{ request()->is('admin/books') ? 'active-nav-link' : ''}} text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+        <a href="{{route('admin.books.index')}}" class="flex items-center {{ request()->is('admin/books') ? 'active-nav-link' : ''}} text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
             <i class='bx bxs-book text-xl me-1'></i>
             Books
         </a>

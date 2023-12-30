@@ -3,8 +3,8 @@
         <table class="shadow-md bg-clip-border border-collapse border border-gray-500 table-auto mx-auto bg-white mt-10 mb-10">
             <div class="flex">
             <tr class="p-10 h-16">
-            <th class="bg-gray-200 text-2xl">Book Details</th>
-                <td class="bg-gray-200"></td>
+            <th class="bg-sidebar text-2xl text-white">Book Details</th>
+                <td class="bg-sidebar"></td>
             </tr>
             <tr class="p-10 h-16">
                 <th class="border-collapse border border-gray-500 text-blue-300">Title</th>

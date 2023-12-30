@@ -1,6 +1,6 @@
 <x-app-layout>
     <!-- This is an example component -->
-    <div class="">
+    <div class="bg-sidebar">
         <!-- Search Label -->
         <div class="container pt-5">
             <div class="flex flex-row content-center">
@@ -10,7 +10,7 @@
                         <i class='bx bx-search-alt-2 text-2xl text-white'></i>
                     </button>
                 </form>
-                
+
             </div>
         </div>
 

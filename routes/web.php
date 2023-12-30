@@ -39,6 +39,7 @@ Route::get('/authors', [AuthorsController::class, 'list'])->name('authors.list')
 Route::get('/authors/search', [AuthorsController::class, 'search'])->name('gallery.authors.search');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/books', [BooksController::class, 'index'])->name('admin.books.index');
 
 
 Route::middleware([

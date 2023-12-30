@@ -26,6 +26,7 @@
             body {
 font-family: 'Ubuntu', sans-serif;
 }
+.bg-sidebar { background: linear-gradient(to bottom, #6875f5, #00bcd4); }
         </style>
     </head>
     <body class="font-sans antialiased">
