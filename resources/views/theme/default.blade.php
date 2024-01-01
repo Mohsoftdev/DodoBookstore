@@ -40,9 +40,16 @@
 
         <div class="w-full overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
+                @if(Session::has('flash_message'))
+                    <div class="text-center text-white bg-green-500 p-3 rounded-xl mb-4">
+                        {{session('flash_message')}}
+                    </div>
+                @endif
+
                 <h1 class="text-3xl text-black pb-6"> @yield('heading')</h1>
-                @yield('content')
                 
+                @yield('content')
+
 
                 <!-- <div class="w-full mt-12">
                     <p class="text-xl pb-3 flex items-center">

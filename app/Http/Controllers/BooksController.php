@@ -6,9 +6,12 @@ use App\Models\Book;
 use App\Models\Category;
 use App\Models\Publisher;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Traits\UploadImageTrait;
 
 class BooksController extends Controller
 {
+    use UploadImageTrait;
     /**
      * Display a listing of the resource.
      */
@@ -42,7 +45,42 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request, [
+            'title' => 'required',
+            'isbn' => ['required', 'alpha_num', Rule::unique('books', 'isbn')],
+            'cover_image' => 'image|required',
+            'category' => 'nullable',
+            'authors' => 'nullable',
+            'publisher' => 'nullable',
+            'description' => 'nullable',
+            'publish_year' => 'numaric|nullable',
+            'number_of_pages' => 'numaric|nullable',
+            'number_of_copies' => 'numaric|nullable',
+            'price' => 'numaric|nullable'
+        ]);
+
+        $book = New Book;
+
+        $book->title = $request->title;
+        $book->isbn = $request->isbn;
+        $book->cover_image = $this->uploadImage( $request->cover_image);
+        $book->category_id = $request->category;
+        $book->publisher_id = $request->publisher;
+        $book->description = $request->description;
+        $book->publish_year = $request->request_year;
+        $book->number_of_pages = $request->number_of_pages;
+        $book->number_of_copies = $request->number_of_copies;
+        $book->price = $request->price;
+
+        $book->save();
+
+        $book->authors()->attach($request->authors);
+
+        session()->flash('flash_message', 'Book is added successfully');
+
+        return redirect(route('book.show', $book));
+
     }
 
     /**
@@ -50,7 +88,7 @@ class BooksController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return view('admin.books.show', compact('book'));
     }
 
     /**
