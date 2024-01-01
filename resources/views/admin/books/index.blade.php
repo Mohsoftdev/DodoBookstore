@@ -1,16 +1,24 @@
 @extends('theme.default')
+@section('head')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+@endsection
 <!-- heading -->
 @section('heading')
 Books
+
 @endsection
 
 <!-- content -->
 
 @section('content')
+<a href="{{route('books.create')}}" class="bg-sidebar p-3 text-white font-bold rounded-xl flex items-center max-w-[120px]">
+    <i class="bx bx-plus text-xl font-bold"></i>
+    Add New
+</a>
 <div class="w-full mt-12">
     <div class="bg-white overflow-auto">
-        <table class="min-w-full bg-white">
-            <thead class="bg-sidebar text-white">
+        <table id="books-table" class="min-w-full bg-white border-2">
+            <thead class="bg-blue-500 text-white">
                 <tr>
                     <th class="w-2/9 text-left py-3 px-4 uppercase font-semibold text-sm">Title</th>
                     <th class="w-2/9 text-left py-3 px-4 uppercase font-semibold text-sm">ISBN</th>
@@ -45,3 +53,15 @@ Books
     </div>
 </div>
 @endsection
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#books-table').DataTable({
+            // Add any customization options here
+        });
+    });
+</script>

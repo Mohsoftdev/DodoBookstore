@@ -35,7 +35,6 @@
         </a>
     </nav>
     <a href="#" class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
-        <i class="bx bx-up-arrow-circle text-xl me-1"></i>
-        Upgrade to Pro!
+       &copy; Mohamedelfatih 2024
     </a>
 </aside>

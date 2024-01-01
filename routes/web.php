@@ -40,6 +40,7 @@ Route::get('/authors/search', [AuthorsController::class, 'search'])->name('galle
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/books', [BooksController::class, 'index'])->name('admin.books.index');
+Route::get('/admin/books/create', [BooksController::class, 'create'])->name('books.create');
 
 
 Route::middleware([
