@@ -47,7 +47,7 @@
                 @endif
 
                 <h1 class="text-3xl text-black pb-6"> @yield('heading')</h1>
-                
+
                 @yield('content')
 
 
@@ -126,6 +126,7 @@
 
     </div>
 
+    @yield('script')
     <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Font Awesome -->

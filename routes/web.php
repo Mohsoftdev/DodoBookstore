@@ -41,8 +41,8 @@ Route::get('/authors/search', [AuthorsController::class, 'search'])->name('galle
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/books', [BooksController::class, 'index'])->name('admin.books.index');
 Route::get('/admin/books/create', [BooksController::class, 'create'])->name('books.create');
-Route::post('/admin/Books', [BooksController::class, 'store'])->name('books.store');
-Route::get('/admin/books/{book}', [BooksController::class, 'show'])->name('books.show');
+Route::post('/admin/books', [BooksController::class, 'store'])->name('books.store');
+Route::get('/admin/books/{book}', [BooksController::class, 'show'])->name('books.show','{book}');
 
 
 
