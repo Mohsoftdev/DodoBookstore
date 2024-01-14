@@ -12,7 +12,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -52,7 +53,12 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $user->adminstartion_level = $request->adminstartion_level;
+        $user->save();
+
+        session()->flash('flash_message','User Role has been updated successfully');
+
+        return redirect(route('admin.users.index'));
     }
 
     /**
@@ -60,6 +66,8 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        session()->flash('flash_message','تم حذف المستخدم بنجاح');
+        return redirect(route('admin.users.index'));
     }
 }

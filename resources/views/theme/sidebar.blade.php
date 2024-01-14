@@ -1,5 +1,5 @@
 <aside class="relative bg-sidebar h-screen w-80 hidden sm:block shadow-xl">
-<div class="bg-logo p-3 flex items-center"><x-logo/><h1 class="font-bold text-white">DoDoBookstore</h1></div>
+<a href="/"><div class="bg-logo p-3 flex items-center"><x-logo/><h1 class="font-bold text-white">DoDoBookstore</h1></div></a>
     <div class="p-6">
 
 
@@ -13,11 +13,11 @@
             <i class='bx bx-tachometer text-xl me-1'></i>
             Dashboard
         </a>
-        <a href="{{route('admin.books.index')}}" class="flex items-center {{ request()->is('admin/books') ? 'active-nav-link' : ''}} text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+        <a href="{{route('admin.books.index')}}" class="flex items-center {{ request()->is('admin/books*') ? 'active-nav-link' : ''}} text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
             <i class='bx bxs-book text-xl me-1'></i>
             Books
         </a>
-        <a href="{{route('categories.list')}}" class="flex items-center {{ request()->is('admin/categories') ? 'active-nav-link' : ''}} text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+        <a href="{{route('admin.categories.index')}}" class="flex items-center {{ request()->is('admin/categories*') ? 'active-nav-link' : ''}} text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
         <i class='bx bx-list-ul text-xl me-1'></i>
             Categories
         </a>
@@ -25,7 +25,7 @@
             <i class='bx bxs-edit text-xl me-1'></i>
             Authors
         </a>
-        <a href="tabs.html" class="flex items-center text-white {{ request()->is('admin/publishers') ? 'active-nav-link' : ''}} opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+        <a href="{{route('admin.publishers.index')}}" class="flex items-center text-white {{ request()->is('admin/publishers*') ? 'active-nav-link' : ''}} opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
             <i class='bx bx-table text-xl me-1'></i>
             Publishers
         </a>

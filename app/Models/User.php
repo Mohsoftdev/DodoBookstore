@@ -58,4 +58,19 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function isAdmin()
+    {
+        return $this->adminstartion_level > 0 ? true : false;
+    }
+
+    public function isSuperAdmin()
+    {
+        return $this->adminstartion_level > 1 ? true : false;
+    }
+
+    public function booksInCart()
+    {
+        return $this->belongsToMany('App\Models\Book')->withPivot(['number_of_copies', 'bought', 'price'])->wherePivot('bought', False);
+    }
 }

@@ -10,9 +10,10 @@ class CategoriesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Category $category)
+    public function index()
     {
-
+        $categories = Category::all();
+        return  view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -22,7 +23,7 @@ class CategoriesController extends Controller
     {
         $books = $category->books()->paginate(12);
         $title = 'Books from ' . $category->name .' Category: ';
-        return view('gallery', compact('books', 'title'));
+        return view('gallery', compact('books', 'title', 'category'));
     }
 
     public function list()
@@ -44,7 +45,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -52,7 +53,19 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, ['name' => 'required']);
+
+        $category = new Category;
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+
+        $category->save();
+
+        session()->flash('flash_message', 'Category is added successfully');
+
+        return redirect(route('admin.categories.index', $category->id));
+
     }
 
     /**
@@ -68,7 +81,7 @@ class CategoriesController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -76,7 +89,16 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $this->validate($request, ['name' => 'required']);
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+
+        $category->save();
+
+        session()->flash('flash_message', 'Category Details Updated Successfully');
+
+        return redirect(route('admin.categories.index'));
     }
 
     /**
@@ -84,6 +106,10 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        session()->flash('flash_message', 'Category was deleted Successfully');
+
+        return redirect(route('admin.categories.index'));
     }
 }

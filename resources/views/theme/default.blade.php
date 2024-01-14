@@ -120,7 +120,7 @@
                 </div> -->
             </main>
 
-            <!-- @include('theme.footer') -->
+            @include('theme.footer')
         </div>
 
 

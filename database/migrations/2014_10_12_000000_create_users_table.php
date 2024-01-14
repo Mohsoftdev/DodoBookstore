@@ -20,7 +20,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
-            $table->unsignedInteger('adminstartion-level')->default(0);
+            $table->unsignedInteger('adminstartion_level')->default(0);
             $table->timestamps();
         });
     }
@@ -33,3 +33,5 @@ return new class extends Migration
         Schema::dropIfExists('users');
     }
 };
+
+

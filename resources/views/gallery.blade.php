@@ -24,7 +24,6 @@
             @if($books->count())
                 @foreach($books as $book)
                     @if($book->number_of_copies > 0)
-
                     <div class="transition ease-in-out hover:-translate-y-2 flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80 mb-6">
                         <a href="{{route('book.details', $book)}}">
                             <div class=" border-4 border-blue-200 relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-80">

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('book_id');
-            $table->unsignedInteger('number_of_copies')->dfault(1);
+            $table->unsignedInteger('number_of_copies')->default(1);
             $table->boolean('bought')->default(FALSE);
             $table->decimal('price', 8, 2)->default(0);
             $table->timestamps();

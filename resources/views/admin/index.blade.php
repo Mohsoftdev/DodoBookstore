@@ -13,20 +13,25 @@ Dashboard
             <i class='bx bx-book-open text-5xl text-blue-500'></i>
         </div>
     </a>
-    <div class="transition ease-in-out hover:-translate-y-2  hover:-translate-x-2 w-64 h-36  bg-white rounded-xl border-r-4 border-red-500 mx-auto md:me-6 mb-5 p-6 flex flex-row items-center justify-between">
-        <div class="flex flex-col">
-            <span class="text-xl font-bold text-red-500 mb-2 mx-auto">{{$number_of_categories}}</span>
-            <h1 class="text-2xl">Categories</h2>
+    <a href="{{route('admin.categories.index')}}">
+        <div class="transition ease-in-out hover:-translate-y-2  hover:-translate-x-2 w-64 h-36  bg-white rounded-xl border-r-4 border-red-500 mx-auto md:me-6 mb-5 p-6 flex flex-row items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-xl font-bold text-red-500 mb-2 mx-auto">{{$number_of_categories}}</span>
+                <h1 class="text-2xl">Categories</h2>
+            </div>
+            <i class="bx bx-list-ul text-5xl text-red-500"></i>
         </div>
-        <i class="bx bx-list-ul text-5xl text-red-500"></i>
-    </div>
-    <div class="transition ease-in-out hover:-translate-y-2  hover:-translate-x-2 w-64  h-36  bg-white rounded-xl border-r-4 border-green-500  mx-auto md:me-6 mb-5 p-6 flex flex-row items-center justify-between">
-        <div class="flex flex-col">
-            <span class="text-xl font-bold text-green-500 mb-2 mx-auto">{{$number_of_publishers}}</span>
-            <h1 class="text-2xl">Publishers</h2>
+    </a>
+
+    <a href="{{route('admin.publishers.index')}}">
+        <div class="transition ease-in-out hover:-translate-y-2  hover:-translate-x-2 w-64  h-36  bg-white rounded-xl border-r-4 border-green-500  mx-auto md:me-6 mb-5 p-6 flex flex-row items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-xl font-bold text-green-500 mb-2 mx-auto">{{$number_of_publishers}}</span>
+                <h1 class="text-2xl">Publishers</h2>
+            </div>
+            <i class="bx bx-table text-5xl text-green-500"></i>
         </div>
-        <i class="bx bx-table text-5xl text-green-500"></i>
-    </div>
+    </a>
     <div class="transition ease-in-out hover:-translate-y-2  hover:-translate-x-2 w-64 h-36  bg-white rounded-xl border-r-4 border-yellow-500  mx-auto md:me-6 mb-5 p-6 flex flex-row items-center justify-between">
         <div class="flex flex-col">
             <span class="text-xl font-bold text-yellow-500 mb-2 mx-auto">{{$number_of_authors}}</span>
@@ -34,6 +39,16 @@ Dashboard
         </div>
         <i class="bx bx-pen text-5xl text-yellow-500"></i>
     </div>
+
+    <a href="{{route('admin.users.index')}}">
+        <div class="transition ease-in-out hover:-translate-y-2  hover:-translate-x-2 w-64 h-36  bg-white rounded-xl border-r-4 border-orange-500  mx-auto md:me-6 mb-5 p-6 flex flex-row items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-xl font-bold text-orange-500 mb-2 mx-auto">{{$number_of_users}}</span>
+                <h1 class="text-2xl me">Users</h2>
+            </div>
+            <i class="bx bxs-user text-5xl text-orange-500"></i>
+        </div>
+    </a>
 </div>
 
 <div class="flex flex-wrap mt-6">
