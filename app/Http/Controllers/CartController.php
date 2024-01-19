@@ -34,4 +34,17 @@ class CartController extends Controller
         return response()->json(['num_of_product' => $num_of_product]);
     }
 
+    public function viewCart() {
+        $books = auth()->user()->booksInCart;
+        return view('cart', compact('books'));
+    }
+
+    public function removeOne(Book $book)
+    {
+        auth()->user()->booksInCart()->detach($book);
+
+        return redirect()->back();
+
+
+    }
 }

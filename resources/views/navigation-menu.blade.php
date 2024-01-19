@@ -41,13 +41,13 @@
                     </div>
                     @auth
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link href="{{ route('Home_Page') }}">
+                        <x-nav-link href="{{ route('cart.view') }}">
                             <i class='bx bxs-cart-alt text-xl'></i>
                             <span class="font-bold text-lg ltr:ms-2 rtl:me-2">{{ __('My Cart') }}</span>
                             @if(Auth::user()->booksInCart()->count() > 0 )
-                                <span class="badge bg-green-500  p-1 m-1 text-white rounded-full">{{ Auth::user()->booksInCart()->count()}}</span>
+                                <span class="badge bg-sidebar p-1 m-1 text-white rounded-full h-6 w-6 flex items-center justify-center font-bold">{{ Auth::user()->booksInCart()->count()}}</span>
                             @else
-                            <span class="badge bg-green-500 p-1 m-1 text-white rounded-full">0</span>
+                            <span class="badge bg-gray-500 p-1 m-1 text-white rounded-full">0</span>
                             @endif
                         </x-nav-link>
                     </div>
@@ -223,11 +223,12 @@
                 <i class='bx bx-edit text-xl text-blue-200'></i>
                 <span class="ltr:ms-1 rtl:me-1">{{ __('Authors') }}</span>
                 </x-responsive-nav-link>
+                @auth
                 <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                 <i class='bx bxs-cart text-xl text-blue-200'></i>
                 <span class="ltr:ms-1 rtl:me-1">{{ __('My cart') }}</span>
                 </x-responsive-nav-link>
-
+                @endauth
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                 <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                     {{ __('API Tokens') }}

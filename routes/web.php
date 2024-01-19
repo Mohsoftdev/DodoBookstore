@@ -70,6 +70,9 @@ Route::patch('/admin/users/{user}', [UsersController::class, 'update'])->name('u
 Route::delete('/admin/users/{user}', [UsersController::class, 'destroy'])->name('admin.users.destroy','{publisher}');
 
 Route::post('/cart', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
+Route::post('/remove/{book}', [CartController::class, 'removeOne'])->name('cart.removeOne');
+Route::post('/removeAll/{book}', [CartController::class, 'removeAll'])->name('cart.removeAll');
 
 
 Route::get('/', [GallaryController::class, 'index'])->name('Home_Page');
