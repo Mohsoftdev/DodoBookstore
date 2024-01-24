@@ -7,6 +7,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\GallaryController;
 use App\Http\Controllers\PublishersController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -73,6 +74,9 @@ Route::post('/cart', [CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
 Route::post('/remove/{book}', [CartController::class, 'removeOne'])->name('cart.removeOne');
 Route::post('/removeAll/{book}', [CartController::class, 'removeAll'])->name('cart.removeAll');
+
+Route::get('/cart/checkout', [PurchaseController::class, 'viewCheckout'])->name('cart.checkout');
+Route::post('/cart/checkout', [PurchaseController::class, 'purchase'])->name('cart.purchase');
 
 
 Route::get('/', [GallaryController::class, 'index'])->name('Home_Page');
