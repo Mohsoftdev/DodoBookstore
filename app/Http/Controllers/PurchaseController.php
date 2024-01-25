@@ -117,7 +117,7 @@ class PurchaseController extends Controller
             return back()->with('Please check card incredentials', $exception->getMessage());
         }
 
-        $this->sendOrderConfirmationMail($books, auth()->user());
+        // $this->sendOrderConfirmationMail($books, auth()->user());
 
         foreach($books as $book) {
             $bookPrice = $book->price;
@@ -126,5 +126,14 @@ class PurchaseController extends Controller
             $book->save();
         }
         return redirect()->route('cart.view')->with('message', 'Purchased Successfully !');
+    }
+
+    public function viewPurchase()
+    {
+        $userId = auth()->user()->id;
+        $user = User::find($userId);
+        $purchasedBooks = $user->purchasedBooks;
+
+        return view('purchase.index', compact('user', 'purchasedBooks'));
     }
 }

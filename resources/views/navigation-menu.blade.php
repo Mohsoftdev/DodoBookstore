@@ -19,6 +19,15 @@
 
                 <!-- Navigation Links -->
                 <div class="flex items-center grow">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    @auth
+                        <x-nav-link href="{{ route('purchase.view') }}">
+                            <i class='bx bxs-cart-download text-2xl'></i>
+                            <span class="font-bold text-lg ltr:ms-2 rtl:me-2">{{ __('Orders') }}</span>
+                        </x-nav-link>
+                    </div>
+                    @endauth
+
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link href="{{ route('categories.list') }}">
                             <i class='bx bx-list-ul text-xl'></i>
@@ -47,7 +56,7 @@
                             @if(Auth::user()->booksInCart()->count() > 0 )
                                 <span class="badge bg-sidebar p-1 m-1 text-white rounded-full h-6 w-6 flex items-center justify-center font-bold">{{ Auth::user()->booksInCart()->count()}}</span>
                             @else
-                            <span class="badge bg-gray-500 p-1 m-1 text-white rounded-full">0</span>
+                            <span class="badge bg-gray-500 p-1 m-1 text-white rounded-full h-6 w-6 flex items-center justify-center font-bold">0</span>
                             @endif
                         </x-nav-link>
                     </div>

@@ -20,7 +20,10 @@ export default {
 
             width: {
                 '70': '17.5rem',
-              }
+              },
+            height: {
+                '41' : '230px',
+            }
         },
 
         variants: {

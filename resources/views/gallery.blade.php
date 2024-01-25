@@ -5,7 +5,7 @@
         <div class="container pt-5">
             <div class="flex flex-row content-center">
                 <form action="/search" class="flex border-4 border-blue-200 rounded-full bg-white h-full mx-auto p-1 items-center">
-                    <input type="text" placeholder="Search..." class="border-0 rounded-full h-full focus:ring-0" name="term">
+                    <input type="text" placeholder="Search..." class="border-0 rounded-full h-full focus:ring-0" name="term" autocomplete="off">
                     <button class="w-12 h-12 p-3 rounded-full bg-sky-600">
                         <i class='bx bx-search-alt-2 text-2xl text-white'></i>
                     </button>
@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <h3 class="my-3 mx-6 text-xl font-bold border-b-4 p-3">{{$title}}</h3>
+        <h3 class="my-3 mx-6 text-xl font-bold border-b-4 p-3 {{ request()->is('/') ? 'text-white' : ''}}">{{$title}}</h3>
 
     </div>
 

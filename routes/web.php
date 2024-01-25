@@ -77,7 +77,7 @@ Route::post('/removeAll/{book}', [CartController::class, 'removeAll'])->name('ca
 
 Route::get('/cart/checkout', [PurchaseController::class, 'viewCheckout'])->name('cart.checkout');
 Route::post('/cart/checkout', [PurchaseController::class, 'purchase'])->name('cart.purchase');
-
+Route::get('/purchase', [PurchaseController::class, 'viewPurchase'])->name('purchase.view');
 
 Route::get('/', [GallaryController::class, 'index'])->name('Home_Page');
 

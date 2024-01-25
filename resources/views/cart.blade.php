@@ -65,7 +65,7 @@
                         <p class="text-lg font-bold">Total</p>
                         <div class="">
                             <p class="mb-1 text-lg font-bold">${{$totalPrice + $books->count() * 1.99 + ($totalPrice + $books->count() * 1.99) * 0.05}}</p>
-                            <p class="text-sm text-gray-700">including VAT</p>
+                            <p class="text-sm text-gray-700">VAT inclusive</p>
                         </div>
                     </div>
                     <div class="d-inline-block" id="paypal-button-container">
